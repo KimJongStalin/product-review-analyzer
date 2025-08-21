@@ -7,6 +7,8 @@ import io
 from review_analyzer_core import ReviewAnalyzer # 确保 review_analyzer_core.py 在同一文件夹
 
 import nltk
+st.set_option('deprecation.showPyplotGlobalUse', False)
+nltk.download('punkt_tab') # 根據錯誤日誌，明確下載這個資源
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
