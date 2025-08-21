@@ -1,5 +1,5 @@
 
-i# review_analyzer_core.py (版本 2.0 - 适配“基础+覆写”逻辑)
+# review_analyzer_core.py (版本 2.0 - 适配“基础+覆写”逻辑)
 
 import nltk
 import pandas as pd
