@@ -6,12 +6,17 @@ import json
 import io
 from review_analyzer_core import ReviewAnalyzer # 确保 review_analyzer_core.py 在同一文件夹
 
-import nltk
-st.set_option('deprecation.showPyplotGlobalUse', False)
-nltk.download('punkt_tab') # 根據錯誤日誌，明確下載這個資源
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+@st.cache_resource
+def setup_nltk_resources():
+    print("正在下載 NLTK 資源...")
+    nltk.download('punkt_tab')
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+    print("NLTK 資源下載完畢。")
+
+# 在應用程式執行之初就調用設定函數
+setup_nltk_resources()
 # --- 页面基础设置 ---
 st.set_page_config(page_title="产品评论自动分析报告", layout="wide")
 st.title("🚀 全功能产品评论分析报告生成器")
