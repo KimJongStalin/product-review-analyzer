@@ -5,8 +5,11 @@ import pandas as pd
 import json
 import io
 from review_analyzer_core import ReviewAnalyzer # 确保 review_analyzer_core.py 在同一文件夹
+
 import nltk
 nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 # --- 页面基础设置 ---
 st.set_page_config(page_title="产品评论自动分析报告", layout="wide")
 st.title("🚀 全功能产品评论分析报告生成器")
